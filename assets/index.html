@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape the Maze</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Escape the Maze</h1>
+        <div id="maze-image">
+            <img id="level-img" src="images/choice1.jpg" alt="Level 1">
+        </div>
+        <div id="prompt">
+            <p id="game-prompt">You're at the entrance of the maze. Do you go left or right?</p>
+        </div>
+        <div id="choices">
+            <button onclick="makeChoice('left')">Left</button>
+            <button onclick="makeChoice('right')">Right</button>
+        </div>
+        <div id="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
