@@ -94,5 +94,14 @@ function showExit() {
     document.getElementById('level-img1').src = exitLevel.image;
     document.getElementById('level-img2').style.display = 'none'; // Hide second image
     document.getElementById('game-prompt').textContent = exitLevel.prompt;
-    document.getElementById('choices').style.display = 'none'; // Hide choices
+    document.getElementById('choices').innerHTML = `<button onclick="playAgain()">Play Again</button>`; // Show "Play Again" button
+}
+
+
+
+
+// Play Again function to reset the game to the start
+function playAgain() {
+    currentLevel = 0; // Reset to entrance level
+    updateLevel(); // Update to the entrance level
 }
