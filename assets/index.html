@@ -10,14 +10,14 @@
     <div class="container">
         <h1>Escape the Maze</h1>
         <div id="maze-image">
-            <img id="level-img" src="images/choice1.jpg" alt="Level 1">
+            <img id="level-img1" src="images/entrance.jpg" alt="Level Image 1">
+            <img id="level-img2" src="" alt="Level Image 2" style="display: none;"> <!-- Hidden by default for entrance -->
         </div>
         <div id="prompt">
-            <p id="game-prompt">You're at the entrance of the maze. Do you go left or right?</p>
+            <p id="game-prompt">Welcome to the Maze! Ready to begin?</p>
         </div>
         <div id="choices">
-            <button onclick="makeChoice('left')">Left</button>
-            <button onclick="makeChoice('right')">Right</button>
+            <button onclick="startGame()">Play</button> <!-- Starts the game -->
         </div>
         <div id="message"></div>
     </div>

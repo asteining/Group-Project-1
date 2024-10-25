@@ -1,32 +1,48 @@
-let currentLevel = 1;
+let currentLevel = 0; // Start at 0 for entrance level
 
 // Game data for each level
 const levels = {
+    0: {
+        prompt: "Welcome to the Maze! Ready to begin?",
+        correctChoice: null, // No correct choice on entrance
+        image1: 'images/entrance.jpg',
+        image2: null // Only one image at entrance
+    },
     1: {
-        prompt: "You're at the entrance of the maze. Do you go left or right?",
-        correctChoice: 'left',
-        image: 'images/entrance.jpg'
+        prompt: "You've reached the first decision point. Choose a path:",
+        correctChoice: 'left', // Example: 'left' is correct
+        image1: 'images/choice1.jpg', // Left choice
+        image2: 'images/choice2.webp'  // Right choice
     },
     2: {
-        prompt: "You've reached a crossroads. Do you go left or right?",
-        correctChoice: 'left',
-        image: 'images/choice1.jpg'
+        prompt: "You've reached the second decision point. Choose wisely:",
+        correctChoice: 'right',
+        image1: 'images/choice3.webp',
+        image2: 'images/choice4.jpg'
     },
     3: {
-        prompt: "You see a staircase. Do you go left or right?",
+        prompt: "The maze is getting tricky! Which way now?",
         correctChoice: 'left',
-        image: 'images/choice3.webp.jpg'
+        image1: 'images/choice5.webp',
+        image2: 'images/choice6.png'
     },
     4: {
-        prompt: "You're almost out! Do you go left or right?",
-        correctChoice: 'left',
-        image: 'images/choice6.png'
+        prompt: "Almost there! Choose your final path:",
+        correctChoice: 'right',
+        image1: 'images/obstacle1.webp',
+        image2: 'images/obstacle2.jpg'
     },
     exit: {
         prompt: "Congratulations! You've escaped the maze!",
-        image: 'images/exit.jpg'
+        image: 'images/maze-exit.jpg'
     }
 };
+
+// Function to handle the "Play" button at the entrance
+function startGame() {
+    currentLevel = 1;
+    updateLevel();
+}
 
 // Function to handle player choices
 function makeChoice(choice) {
@@ -42,23 +58,41 @@ function makeChoice(choice) {
     }
 }
 
-// Update the level image and prompt
+// Update the level images and prompt
 function updateLevel() {
-    document.getElementById('level-img').src = levels[currentLevel].image;
-    document.getElementById('game-prompt').textContent = levels[currentLevel].prompt;
-    document.getElementById('message').textContent = '';
+    const level = levels[currentLevel];
+
+    if (currentLevel === 0) {
+        // Entrance level with one image and play button
+        document.getElementById('level-img1').src = level.image1;
+        document.getElementById('level-img2').style.display = 'none'; // Hide second image
+        document.getElementById('game-prompt').textContent = level.prompt;
+        document.getElementById('choices').innerHTML = `<button onclick="startGame()">Play</button>`;
+    } else {
+        // Levels with two image choices
+        document.getElementById('level-img1').src = level.image1;
+        document.getElementById('level-img2').src = level.image2;
+        document.getElementById('level-img2').style.display = 'inline'; // Show second image
+        document.getElementById('game-prompt').textContent = level.prompt;
+        document.getElementById('choices').innerHTML = `
+            <button onclick="makeChoice('left')">Choose Left</button>
+            <button onclick="makeChoice('right')">Choose Right</button>`;
+        document.getElementById('message').textContent = '';
+    }
 }
 
 // Handle wrong choice (reset to level 1)
 function resetToStart() {
-    currentLevel = 1;
+    currentLevel = 0;
     updateLevel();
     document.getElementById('message').textContent = "Wrong choice! You're back at the start.";
 }
 
 // Show exit message when player escapes
 function showExit() {
-    document.getElementById('level-img').src = levels.exit.image;
-    document.getElementById('game-prompt').textContent = levels.exit.prompt;
-    document.getElementById('choices').style.display = 'none';
+    const exitLevel = levels.exit;
+    document.getElementById('level-img1').src = exitLevel.image;
+    document.getElementById('level-img2').style.display = 'none'; // Hide second image
+    document.getElementById('game-prompt').textContent = exitLevel.prompt;
+    document.getElementById('choices').style.display = 'none'; // Hide choices
 }
