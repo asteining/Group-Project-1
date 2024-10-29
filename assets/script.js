@@ -5,36 +5,36 @@ const levels = {
     0: {
         prompt: "Welcome to the Maze! Ready to begin?",
         correctChoice: null, // No correct choice on entrance
-        image1: 'assets/images/entrance.jpg',
+        image1: 'images/entrance.jpg',
         image2: null // Only one image at entrance
     },
     1: {
         prompt: "You've reached the first decision point. Choose a path:",
         correctChoice: 'left', // Example: 'left' is correct
-        image1: 'assets/images/choice1.jpg', // Left choice
-        image2: 'assets/images/choice2.webp'  // Right choice
+        image1: 'images/choice1.jpg', // Left choice
+        image2: 'images/choice2.webp'  // Right choice
     },
     2: {
         prompt: "You've reached the second decision point. Choose wisely:",
         correctChoice: 'right',
-        image1: 'assets/images/choice3.webp',
-        image2: 'assets/images/choice4.jpg'
+        image1: 'images/choice3.webp',
+        image2: 'images/choice4.jpg'
     },
     3: {
         prompt: "The maze is getting tricky! Which way now?",
         correctChoice: 'left',
-        image1: 'assets/images/choice5.webp',
-        image2: 'assets/images/choice6.png'
+        image1: 'images/choice5.webp',
+        image2: 'images/choice6.png'
     },
     4: {
         prompt: "Almost there! Choose your final path:",
         correctChoice: 'right',
-        image1: 'assets/images/obstacle1.webp',
-        image2: 'assets/images/obstacle2.jpg'
+        image1: 'images/obstacle1.webp',
+        image2: 'images/obstacle2.jpg'
     },
     exit: {
         prompt: "Congratulations! You've escaped the maze!",
-        image: 'assets/images/maze-exit.jpg'
+        image: 'images/maze-exit.jpg'
     }
 };
 
