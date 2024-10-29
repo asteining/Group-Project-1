@@ -5,40 +5,40 @@ const levels = {
     0: {
         prompt: "Welcome to the Maze! Ready to begin?",
         correctChoice: null, // No correct choice on entrance
-        image1: 'images/entrance.jpg',
+        image1: 'assets/images/entrance.jpg',
         image2: null // Only one image at entrance
     },
     1: {
         prompt: "You've reached the first decision point. Choose a path:",
         correctChoice: 'left', // Example: 'left' is correct
-        image1: 'images/choice1.jpg', // Left choice
-        image2: 'images/choice2.webp'  // Right choice
+        image1: 'assets/images/choice1.jpg', // Left choice
+        image2: 'assets/images/choice2.webp'  // Right choice
     },
     2: {
         prompt: "You've reached the second decision point. Choose wisely:",
         correctChoice: 'right',
-        image1: 'images/choice3.webp',
-        image2: 'images/choice4.jpg'
+        image1: 'assets/images/choice3.webp',
+        image2: 'assets/images/choice4.jpg'
     },
     3: {
         prompt: "The maze is getting tricky! Which way now?",
         correctChoice: 'left',
-        image1: 'images/choice5.webp',
-        image2: 'images/choice6.png'
+        image1: 'assets/images/choice5.webp',
+        image2: 'assets/images/choice6.png'
     },
     4: {
         prompt: "Almost there! Choose your final path:",
         correctChoice: 'right',
-        image1: 'images/obstacle1.webp',
-        image2: 'images/obstacle2.jpg'
+        image1: 'assets/images/obstacle1.webp',
+        image2: 'assets/images/obstacle2.jpg'
     },
     exit: {
         prompt: "Congratulations! You've escaped the maze!",
-        image: 'images/maze-exit.jpg'
+        image: 'assets/images/maze-exit.jpg'
     }
 };
 
-// Function to handle the "Play" button at the entrance
+// Function to start the game
 function startGame() {
     currentLevel = 1;
     updateLevel();
@@ -67,7 +67,7 @@ function updateLevel() {
         document.getElementById('level-img1').src = level.image1;
         document.getElementById('level-img2').style.display = 'none'; // Hide second image
         document.getElementById('game-prompt').textContent = level.prompt;
-        document.getElementById('choices').innerHTML = `<button onclick="startGame()">Play</button>`;
+        document.getElementById('choices').innerHTML = `<button class="btn btn-dark" onclick="startGame()">Play</button>`;
     } else {
         // Levels with two image choices
         document.getElementById('level-img1').src = level.image1;
@@ -75,8 +75,8 @@ function updateLevel() {
         document.getElementById('level-img2').style.display = 'inline'; // Show second image
         document.getElementById('game-prompt').textContent = level.prompt;
         document.getElementById('choices').innerHTML = `
-            <button onclick="makeChoice('left')">Choose Left</button>
-            <button onclick="makeChoice('right')">Choose Right</button>`;
+            <button class="btn btn-dark" onclick="makeChoice('left')">Choose Left</button>
+            <button class="btn btn-dark" onclick="makeChoice('right')">Choose Right</button>`;
         document.getElementById('message').textContent = '';
     }
 }
@@ -94,14 +94,13 @@ function showExit() {
     document.getElementById('level-img1').src = exitLevel.image;
     document.getElementById('level-img2').style.display = 'none'; // Hide second image
     document.getElementById('game-prompt').textContent = exitLevel.prompt;
-    document.getElementById('choices').innerHTML = `<button onclick="playAgain()">Play Again</button>`; // Show "Play Again" button
+    document.getElementById('choices').innerHTML = `<button class="btn btn-dark" onclick="playAgain()">Play Again</button>`;
 }
-
-
-
 
 // Play Again function to reset the game to the start
 function playAgain() {
     currentLevel = 0; // Reset to entrance level
     updateLevel(); // Update to the entrance level
 }
+
+

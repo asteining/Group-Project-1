@@ -39,8 +39,6 @@ h1 {
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
     border: none;
     border-radius: 5px;
 }
@@ -54,6 +52,31 @@ h1 {
     color: red;
     margin-top: 20px;
 }
+
+/*Larger than Ipad Screen*/
+@media screen and (max-width: 991px) {
+    .container {
+      width: 100%;
+      padding: 1rem;
+    }
+
+
+#maze-image img {
+    display: inline-flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#message {
+    font-size: 1.2em;
+    color: red;
+    margin-top: 20px;
+}
+}
+
 
 
 /*Ipad Screen*/
