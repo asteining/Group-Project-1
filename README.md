@@ -20,7 +20,7 @@
     5. For every image and button there is bootstrap framework linked
     6. Every player choice is locally stored on the browser
     7. There is a modal included that displays previous player choices and levels left to play
-    8. The player is given the choice to reset their progress by hard-refreshing thier browser
+    8. The player is given the choice to reset their progress by hard-refreshing their browser
   
 # Message from developers
   Please enjoy our game!!
