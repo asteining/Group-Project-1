@@ -55,3 +55,11 @@ function makeChoice(choice) {
         resetToStart();
     }
 }
+
+window.onload = function() {
+    const confirmReset = confirm("Do you want to reset your game progress?");
+    if (confirmReset) {
+        localStorage.clear();
+        console.log("Local storage has been cleared on page refresh.");
+    }
+};
