@@ -4,13 +4,13 @@
   Interactive user game that allows player to choose options to try and escape the maze
 
   # User Story 
-   Four correct locations that lead to the exit
-   Two answers for each choice
-   If player chooses wrong option they must go back to original location
-   If player chooses right location they move up
-   Once they complete all levels they exit the maze
-   Player should be able to view their progress
-   Player should be able to erase their progress if they want
+    1. Four correct locations that lead to the exit
+    2. Two answers for each choice
+    3. If player chooses wrong option they must go back to original location
+    4. If player chooses right location they move up
+    5. Once they complete all levels they exit the maze
+    6. Player should be able to view their progress
+    7. Player should be able to erase their progress if they want
 
  # Acceptance Criteria
     1. For every level there is an image associated
