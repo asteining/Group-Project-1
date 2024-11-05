@@ -28,5 +28,5 @@
 # Link to website
 https://asteining.github.io/Group-Project-1-Exit-The-Maze-/
 
-
-![homepage] (images/website.png)
+# Screenshot
+![homepage](images/website.png)
