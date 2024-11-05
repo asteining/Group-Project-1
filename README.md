@@ -24,3 +24,9 @@
   
 # Message from developers
   Please enjoy our game!!
+
+# Link to website
+https://asteining.github.io/Group-Project-1-Exit-The-Maze-/
+
+
+![homepage] (images/website.png)
